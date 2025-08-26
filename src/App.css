@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #27b1d3;
+  --color-secondary: #1a211c;
+  --color-accent: #f3efdf;
+}
+
+.bg-hero {
+  background-image: url("/images/heroBanner5.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* ensures full viewport height */
+}
+
+/* Floating animation */
+.floating-image,
+.floating-image2 {
+  position: absolute;
+}
+
+/* Floating animation for top half */
+@keyframes floatTop {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(80px, -100px) rotate(15deg);
+  }
+  50% {
+    transform: translate(-160px, 60px) rotate(-8deg);
+  }
+  75% {
+    transform: translate(100px, 40px) rotate(6deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.floating-image {
+  top: 10%; /* stays in top half */
+  left: 25%;
+  animation: floatTop 40s ease-in-out infinite;
+}
+
+/* Floating animation for bottom half */
+@keyframes floatBottom {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(70px, 100px) rotate(-16deg);
+  }
+  50% {
+    transform: translate(90px, -100px) rotate(10deg);
+  }
+  75% {
+    transform: translate(-350px, -40px) rotate(-14deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.floating-image2 {
+  top: 60%; /* stays in bottom half */
+  left: 55%;
+  animation: floatBottom 40s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.4s ease-out;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* For the whole page */
+::-webkit-scrollbar {
+  width: 10px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa; /* track color (cloud white from your palette) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #87ceeb; /* thumb (sky blue) */
+  border-radius: 10px;
+  border: 2px solid #c1efff; /* bubble glow border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e4a62; /* darker on hover (Snorlax blue) */
+}
