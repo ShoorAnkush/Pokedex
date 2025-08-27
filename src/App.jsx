@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Navbar } from "./components/NavBar";
+import { Navbar } from "./components/Navbar";
 import { Pokemon } from "./components/Pokemon";
 import { MyTeam } from "./pages/MyTeam";
 import { Home } from "./pages/Home";

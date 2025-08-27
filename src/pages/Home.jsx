@@ -1,4 +1,4 @@
-import { Navbar } from "../components/NavBar";
+import { Navbar } from "../components/Navbar";
 import { RandomPokemonImage } from "../components/RandomPokemon";
 
 export const Home = ({ pokemon, favorites, setFavorites }) => {
